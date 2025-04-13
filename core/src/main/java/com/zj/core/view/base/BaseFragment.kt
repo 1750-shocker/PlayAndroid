@@ -67,8 +67,10 @@ abstract class BaseFragment : Fragment(), ILce, BaseFragmentInit {
             0
         )
         lce.layoutParams = params
+        //这个是原本的Fragment的ui
         val content = getLayoutView(inflater, container, false)
         frameLayout.addView(content)
+        //将lce视图叠放在原本的视图上面
         frameLayout.addView(lce)
         onCreateView(lce)
         return frameLayout

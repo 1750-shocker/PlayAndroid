@@ -122,9 +122,11 @@ class ArticleActivity : BaseActivity(), View.OnClickListener {
                     finish()
                 }
             }
+
             R.id.articleImgRight -> {
                 setBottomDialog()
             }
+
             R.id.bottomDialogLlCollect -> {
                 bottomSheetDialog?.dismiss()
                 viewModel.setCollect(isCollection, pageId, originId) {
@@ -139,27 +141,33 @@ class ArticleActivity : BaseActivity(), View.OnClickListener {
                     }
                 }
             }
+
             R.id.bottomDialogLlCopy -> {
                 bottomSheetDialog?.dismiss()
                 ArticleUtils.copyToClipboard(this, pageUrl)
                 showToast(getString(R.string.copy_succeeded))
             }
+
             R.id.bottomDialogLlBrowser -> {
                 bottomSheetDialog?.dismiss()
                 ArticleUtils.jumpBrowser(this, pageUrl)
             }
+
             R.id.bottomDialogLlShare -> {
                 bottomSheetDialog?.dismiss()
                 ArticleUtils.shareUrl(this, pageUrl, pageName)
             }
+
             R.id.bottomDialogLlDynamic -> {
                 bottomSheetDialog?.dismiss()
                 ShareActivity.actionStart(this, false, userId)
             }
+
             R.id.bottomDialogLlReload -> {
                 bottomSheetDialog?.dismiss()
                 binding.articleWebView.reload()
             }
+
             R.id.bottomDialogTvCancel -> {
                 bottomSheetDialog?.dismiss()
             }
